@@ -38,24 +38,24 @@ class tile(object):
         pygame.draw.lines(self.surface, line_colour, False, pointlist, line_width)
         screen.blit(self.surface, self.screen_pos)
 
-def zoom_in(tiles_per_side, screen_width, screen_height, tiles_per_side_GLOBAL, topleft_grid_onscreen, toolbar_height,
-            tile_list, screen, line_width):
+def zoom_in(tiles_per_side, screen_width, screen_height, tiles_per_side_GLOBAL, topleft_grid_onscreen, toolbar_height, tile_list, screen,
+            line_width):
     tiles_per_side = tiles_per_side/2
     if tiles_per_side < 3:
         tiles_per_side = 3
     tile_width, tile_height = reassign_tile_variables(screen_width, screen_height, tiles_per_side)
-    get_new_tile_list(tiles_per_side_GLOBAL, topleft_grid_onscreen, tile_width, tile_height, toolbar_height, tile_list,
-                      screen, line_width, tiles_per_side)
+    get_new_tile_list(tiles_per_side_GLOBAL, topleft_grid_onscreen, tile_width, tile_height, toolbar_height, tile_list, screen,
+                              line_width, tiles_per_side)
     return tile_width, tile_height, tiles_per_side
     
-def zoom_out(tiles_per_side, screen_width, screen_height, tiles_per_side_GLOBAL, topleft_grid_onscreen, toolbar_height,
-             tile_list, screen, line_width):
+def zoom_out(tiles_per_side, screen_width, screen_height, tiles_per_side_GLOBAL, topleft_grid_onscreen, toolbar_height, tile_list, screen,
+             line_width):
     tiles_per_side = 2*tiles_per_side
     if tiles_per_side > tiles_per_side_GLOBAL:
         tiles_per_side = tiles_per_side_GLOBAL
     tile_width, tile_height = reassign_tile_variables(screen_width, screen_height, tiles_per_side)
-    get_new_tile_list(tiles_per_side_GLOBAL, topleft_grid_onscreen, tile_width, tile_height, toolbar_height, tile_list,
-                      screen, line_width, tiles_per_side)
+    get_new_tile_list(tiles_per_side_GLOBAL, topleft_grid_onscreen, tile_width, tile_height, toolbar_height, tile_list, screen,
+                              line_width, tiles_per_side)
     return tile_width, tile_height, tiles_per_side
 
 def get_new_tile_list(tiles_per_side_GLO, topleft_grid_onscreen, tile_width, tile_height, toolbar_height, tile_list, screen, line_width,
@@ -80,7 +80,7 @@ def get_new_tile_list(tiles_per_side_GLO, topleft_grid_onscreen, tile_width, til
             tile.screen_pos = coord_trans[i][j]
             tile.draw_tile(screen, tile_width, tile_height, line_width, BLACK)
         
- def reassign_tile_variables(screen_width, screen_height, tiles_per_side):
+def reassign_tile_variables(screen_width, screen_height, tiles_per_side):
     tile_width = (((screen_width)/tiles_per_side))
     tile_height = (((screen_height)/tiles_per_side))
     return (tile_width, tile_height)
