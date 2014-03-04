@@ -210,13 +210,14 @@ def main():
                 if zoom_in_textpos.collidepoint(pygame.mouse.get_pos()):
                     print ("ZOOM IN")
                     tile_width, tile_height, tiles_per_side  = the_map.zoom_in(tiles_per_side, screen_width, screen_height,
-                                                                                          tiles_per_side_GLOBAL, topleft_grid_onscreen,
-                                                                                          toolbar_height, tile_list, screen, line_width)
+                                                                               tiles_per_side_GLOBAL, topleft_grid_onscreen,
+                                                                               toolbar_height, tile_list, screen,
+                                                                               line_width)
 
                 #zoom out
                 if zoom_out_textpos.collidepoint(pygame.mouse.get_pos()):
                     print ("ZOOM OUT")
-                    xtile_width, tile_height, tiles_per_side = the_map.zoom_out(tiles_per_side, screen_width, screen_height,
+                    tile_width, tile_height, tiles_per_side = the_map.zoom_out(tiles_per_side, screen_width, screen_height,
                                                                                           tiles_per_side_GLOBAL, topleft_grid_onscreen,
                                                                                           toolbar_height, tile_list, screen, line_width)
 
